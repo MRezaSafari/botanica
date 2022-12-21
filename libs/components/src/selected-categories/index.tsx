@@ -11,7 +11,7 @@ const SelectedCategories = () => {
             Shop by Category
           </h2>
           <Link href="/collections">
-            <a className="hidden font-semibold text-18 text-highlight hover:text-indigo-500 md:flex items-center gap-1">
+            <a className="hidden font-semibold font-poppins text-18 text-highlight hover:text-indigo-500 md:flex items-center gap-1">
               Browse all categories
               <span aria-hidden="true">
                 <IconChevronRight size={20} />
@@ -35,7 +35,7 @@ const SelectedCategories = () => {
             />
             <div className="p-6 flex items-end">
               <div>
-                <h3 className="font-semibold text-white">
+                <h3 className="font-semibold text-white font-poppins text-[32px]">
                   <Link href="/collection/cbd-face-body-care">
                     <a target="_blank">
                       <span className="absolute inset-0" />
@@ -43,7 +43,10 @@ const SelectedCategories = () => {
                     </a>
                   </Link>
                 </h3>
-                <p aria-hidden="true" className="mt-1 text-sm text-white">
+                <p
+                  aria-hidden="true"
+                  className="mt-1 text-base text-white font-poppins"
+                >
                   Find out why topical, full-spectrum CBD Oil is a game changer
                   when it comes to healing and reviving your skin!
                 </p>
@@ -64,7 +67,7 @@ const SelectedCategories = () => {
             />
             <div className="p-6 flex items-end sm:absolute sm:inset-0">
               <div>
-                <h3 className="font-semibold text-white">
+                <h3 className="font-semibold text-white font-poppins text-2xl">
                   <Link href="/collection/hand-body-self-care">
                     <a target="_blank">
                       <span className="absolute inset-0" />
@@ -72,7 +75,10 @@ const SelectedCategories = () => {
                     </a>
                   </Link>
                 </h3>
-                <p aria-hidden="true" className="mt-1 text-sm text-white">
+                <p
+                  aria-hidden="true"
+                  className="mt-1 text-base text-white font-poppins"
+                >
                   Keep your hands and your body clean, nourished, and feeling
                   exceptionally soft with our vegan and plant-based hand & body
                   products.
@@ -94,7 +100,7 @@ const SelectedCategories = () => {
             />
             <div className="p-6 flex items-end sm:absolute sm:inset-0">
               <div>
-                <h3 className="font-semibold text-white">
+                <h3 className="font-semibold text-white font-poppins text-2xl">
                   <Link href="/collection/hair-care">
                     <a target="_blank">
                       <span className="absolute inset-0" />
@@ -102,7 +108,10 @@ const SelectedCategories = () => {
                     </a>
                   </Link>
                 </h3>
-                <p aria-hidden="true" className="mt-1 text-sm text-white">
+                <p
+                  aria-hidden="true"
+                  className="mt-1 text-base text-white font-poppins"
+                >
                   we’ve worked with haircare geniuses from the world’s leading
                   labs to bring you the best sulphate-free shampoos, nourishing
                   conditioners and the ultimate boosters and repair mask for

@@ -13,7 +13,6 @@ module.exports = {
     ...createGlobPatternsForDependencies(__dirname),
   ],
   theme: {
-    
     extend: {
       spacing: {
         460: '460px',
@@ -27,6 +26,7 @@ module.exports = {
         sans: ['sans-serif'],
         poppins: ['Poppins'],
         noto: ['Noto Serif Devanagari'],
+        raleway: ['Raleway'],
       },
       letterSpacing: {
         2: '2px',

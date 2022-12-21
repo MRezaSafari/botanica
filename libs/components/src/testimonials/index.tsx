@@ -42,10 +42,10 @@ const Testimonials: FC = () => {
       loop: true,
       mode: 'snap',
       breakpoints: {
-        "(max-width: 767px)": {
+        '(max-width: 767px)': {
           slides: { origin: 'center', perView: 1.5, spacing: 5 },
         },
-        "(min-width: 678px)": {
+        '(min-width: 678px)': {
           slides: { origin: 'center', perView: 2.2, spacing: 24 },
         },
       },
@@ -86,7 +86,7 @@ const Testimonials: FC = () => {
   );
 
   return (
-    <section className="pb-10 md:pb-40 mb-10 md:mb-40 pt-40">
+    <section className="pb-10 md:pb-40 mb-10 md:mb-40 pt-20">
       <div className="max-w-2xl mx-auto lg:max-w-none">
         <div className="md:flex md:items-center md:justify-between md:flex-col mb-20">
           <h2 className="text-52 font-light text-center font-noto -tracking-2 text-neutral">
@@ -120,7 +120,7 @@ const Testimonials: FC = () => {
                   className="m-auto mb-6"
                 />
                 <div className="sm:flex flex justify-between flex-col flex-1 text-center">
-                  <p className=" text-dark text-xs md:text-lg font-normal">
+                  <p className=" text-dark text-xs md:text-2xl font-normal">
                     {testimonial.quote}
                   </p>
                   <div className="flex justify-between flex-col">

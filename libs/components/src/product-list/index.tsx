@@ -12,10 +12,16 @@ interface Props {
   moreText: string;
   moreUrl: string;
   products: ProductsModel;
-  badge?: string
+  badge?: string;
 }
 
-const ProductList: FC<Props> = ({ title, moreText, moreUrl, products, badge }) => {
+const ProductList: FC<Props> = ({
+  title,
+  moreText,
+  moreUrl,
+  products,
+  badge,
+}) => {
   return (
     <>
       <div className="md:flex md:items-center md:justify-between md:flex-col">
@@ -23,9 +29,7 @@ const ProductList: FC<Props> = ({ title, moreText, moreUrl, products, badge }) =
           {title}
         </h2>
         <Link href={moreUrl}>
-          <a
-            className="hidden font-semibold text-18 text-highlight hover:text-indigo-500 md:flex items-center gap-1"
-          >
+          <a className="hidden font-semibold font-poppins text-18 text-highlight hover:text-indigo-500 md:flex items-center gap-1">
             {moreText}
             <span aria-hidden="true">
               <IconChevronRight size={20} />

@@ -61,7 +61,7 @@ const Index: FC<HomeBasicModel> = ({ data }) => {
               <h5 className="font-noto text-[#e5e8f0] text-52 font-light">
                 Healthy Skincare
               </h5>
-              <p className="font-normal text-lg text-[#e5e8f0]">
+              <p className="font-normal font-poppins text-lg text-[#e5e8f0]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
                 pretium pellentesque nibh eget venenatis. Sed volutpat, purus eu
                 pellentesque lobortis, nulla erat fermentum ligula, non dictum
@@ -86,7 +86,7 @@ const Index: FC<HomeBasicModel> = ({ data }) => {
 
 export async function getStaticProps() {
   const { data } = await storefront<HomeBasicModel>(homeStructureQuery);
-  
+
   return {
     props: {
       data,

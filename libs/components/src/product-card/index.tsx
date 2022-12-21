@@ -42,24 +42,28 @@ const ProductCard: FC<Props> = ({ product, badge }) => {
               width={278}
               height={333}
               src={product.featuredImage.url}
-              alt={product.featuredImage.altText ? product.featuredImage.altText : product.featuredImage.id}
+              alt={
+                product.featuredImage.altText
+                  ? product.featuredImage.altText
+                  : product.featuredImage.id
+              }
               className="w-full h-full object-center object-cover rounded-2xl rounded-b-none"
             />
           </div>
           <div className="p-7 pt-0">
             <h3
-              className="text-base text-[#111] font-poppins font-semibold my-6 text-center"
+              className="text-base text-[#111] font-poppins font-semibold my-6 text-center text-[20px]"
               style={{ minHeight: 48 }}
             >
               {truncateString(product.title, 55)}
             </h3>
 
-            <p className="mt-5 mb-5 text-base font-semibold text-center text-[#111]">
+            <p className="mt-5 mb-5 text-base font-semibold text-center text-[#111] text-[20px]">
               ${product.priceRange.minVariantPrice.amount}
             </p>
 
             <h4
-              className=" text-[#666] font-poppins font-normal text-sm my-6 text-center"
+              className=" text-[#666] font-poppins font-medium	 text-sm my-6 text-center"
               style={{ minHeight: 44 }}
             >
               {truncateString(product.description, 55)}

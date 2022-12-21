@@ -13,8 +13,8 @@ const perks = [
     name: '30 day guarantee',
     Icon: (
       <Image
-        width={50}
-        height={50}
+        width={80}
+        height={80}
         src="/images/icons-gaurantee.svg"
         alt="30 Day Money Back Guarantee"
       />
@@ -26,8 +26,8 @@ const perks = [
     name: 'free delivery',
     Icon: (
       <Image
-        width={50}
-        height={50}
+        width={80}
+        height={80}
         src="/images/icons-shipping.svg"
         alt="Free Delivery"
       />
@@ -39,8 +39,8 @@ const perks = [
     name: 'all year discount',
     Icon: (
       <Image
-        width={50}
-        height={50}
+        width={80}
+        height={80}
         src="/images/icons-discount.svg"
         alt="All year discount"
       />
@@ -52,8 +52,8 @@ const perks = [
     name: 'for the planet',
     Icon: (
       <Image
-        width={50}
-        height={50}
+        width={80}
+        height={80}
         src="/images/icons-planet.svg"
         alt="For the planet"
       />
@@ -65,7 +65,7 @@ const perks = [
 
 const Perks = () => {
   return (
-    <section aria-labelledby="perks-heading" className="mt-20">
+    <section aria-labelledby="perks-heading" className="mt-32">
       <Container>
         <div className="md:flex md:items-center md:justify-between md:flex-col">
           <h2 className="text-52 font-light text-center font-noto -tracking-2 text-neutral">
@@ -82,14 +82,14 @@ const Perks = () => {
                 key={perk.name}
                 className="text-center md:flex md:items-start md:text-left lg:block lg:text-center"
               >
-                <div className="md:flex-shrink-0 flex justify-center">
+                <div className="md:flex-shrink-0 flex justify-center h-[80px]">
                   <div className="flow-root">{perk.Icon}</div>
                 </div>
                 <div className="mt-6 md:mt-0 md:ml-4 lg:mt-6 lg:ml-0">
-                  <h3 className="text-sm font-semibold tracking-wide uppercase text-gray-900">
+                  <h3 className="text-2xl font-poppins font-semibold tracking-wide uppercase text-dark">
                     {perk.name}
                   </h3>
-                  <p className="mt-3 text-sm text-gray-500">
+                  <p className="text-base mt-3  text-[#666666] font-poppins">
                     {perk.description}
                   </p>
                 </div>

@@ -72,7 +72,6 @@ const navigation = {
 const Footer = () => {
   return (
     <>
-
       <footer className="bg-white" aria-labelledby="footer-heading">
         <h2 id="footer-heading" className="sr-only">
           Footer
@@ -82,7 +81,7 @@ const Footer = () => {
             <div className="grid grid-cols-2 gap-8 xl:col-span-2">
               <div className="md:grid md:grid-cols-2 md:gap-8">
                 <div>
-                  <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">
+                  <h3 className="text-xs font-bold font-poppins text-dark tracking-wider uppercase">
                     MAIN MENU
                   </h3>
                   <ul role="list" className="mt-4 space-y-4">
@@ -90,7 +89,7 @@ const Footer = () => {
                       <li key={item.name}>
                         <a
                           href={item.href}
-                          className="text-base text-gray-500 hover:text-gray-900"
+                          className="text-base font-poppins text-dark hover:text-cool"
                         >
                           {item.name}
                         </a>
@@ -98,18 +97,14 @@ const Footer = () => {
                     ))}
                   </ul>
                 </div>
-              
               </div>
-              <div className="md:grid md:grid-cols-2 md:gap-8">
-               
-               
-              </div>
+              <div className="md:grid md:grid-cols-2 md:gap-8"></div>
             </div>
             <div className="mt-8 xl:mt-0">
-              <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">
-                Subscribe to our newsletter
+              <h3 className="text-xs font-bold font-poppins text-dark tracking-wider uppercase">
+                newsletter
               </h3>
-              <p className="mt-4 text-base text-gray-500">
+              <p className="mt-4 text-base text-[#8e8e8e] font-poppins ">
                 The latest news, articles, and resources, sent to your inbox
                 weekly.
               </p>
@@ -120,8 +115,8 @@ const Footer = () => {
                   id="email-address"
                   autoComplete="email"
                   required
-                  className="appearance-none min-w-0 w-full border-none rounded-md  py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-0 focus:border-indigo-500 focus:placeholder-gray-400"
-                  placeholder="Enter your email"
+                  className="font-poppins appearance-none min-w-0 w-full border-none rounded-md  py-2 px-4 text-base text-gray-900 placeholder-[#666666] focus:outline-none focus:ring-0 focus:border-indigo-500 focus:placeholder-[#666666]"
+                  placeholder="Email Address"
                 />
                 <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
                   <button
@@ -136,7 +131,9 @@ const Footer = () => {
           </div>
           <div className="flex justify-between mt-20 items-end">
             <div>
-              <p className='text-[#8e8e8e] font-normal text-sm'>Copyright ©2022 Botanical Skin Science, Inc.</p>
+              <p className="text-[#8e8e8e] font-poppins font-normal text-sm">
+                Copyright ©2022 Botanical Skin Science, Inc.
+              </p>
             </div>
             <div>
               <Image

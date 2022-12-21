@@ -269,11 +269,11 @@ const Header: FC<Props> = ({ menu }: Props) => {
                 </div>
 
                 <div className="ml-auto flex items-center">
-                  <ul className="hidden gap-5 ml-7 lg:flex md:flex mr-6">
+                  <ul className="hidden gap-5 ml-7 lg:flex md:flex mr-10">
                     {menu?.map((category) => (
                       <li
                         key={category.resourceId}
-                        className="text-sm group relative cursor-pointer"
+                        className="text-lg font-semibold	font-raleway text-dark group relative cursor-pointer"
                       >
                         {(!category.items || category.items.length === 0) && (
                           <Link
@@ -320,10 +320,7 @@ const Header: FC<Props> = ({ menu }: Props) => {
 
                   {/* Search */}
                   <div className="flex">
-                    <a
-                      href="#"
-                      className="p-2 text-gray-400 hover:text-gray-500"
-                    >
+                    <a href="#" className=" text-gray-400 hover:text-gray-500">
                       <Image
                         src="/images/icons-search.svg"
                         width={30}
@@ -334,10 +331,10 @@ const Header: FC<Props> = ({ menu }: Props) => {
                   </div>
 
                   {/* User */}
-                  <div className="flex">
+                  <div className="flex mx-10">
                     <a
                       href="#"
-                      className="p-2 text-gray-400 hover:text-gray-500 group relative cursor-pointer"
+                      className=" text-gray-400 hover:text-gray-500 group relative cursor-pointer"
                     >
                       <Image
                         src="/images/icons-account.svg"
@@ -358,10 +355,10 @@ const Header: FC<Props> = ({ menu }: Props) => {
                   </div>
 
                   {/* Cart */}
-                  <div className="ml-4 flow-root">
+                  <div className="flow-root">
                     <a
                       href="#"
-                      className="group -m-2 p-2 flex items-center bg-dark rounded-full relative hover:bg-cool"
+                      className="group p-2 flex items-center bg-dark rounded-full relative hover:bg-cool"
                       onClick={handleDisplayCart}
                     >
                       <span className="text-sm  absolute -top-1 -right-2 bg-highlight rounded-full text-white w-6 h-6 flex justify-center items-center">
