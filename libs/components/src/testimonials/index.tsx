@@ -1,7 +1,4 @@
-import classNames from 'classnames';
-import { useKeenSlider } from 'keen-slider/react';
-import Image from 'next/future/image';
-import React, { FC, useState } from 'react';
+import { FC } from 'react';
 
 const testimonials = [
   {
@@ -35,99 +32,45 @@ const testimonials = [
 ];
 
 const Testimonials: FC = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
-    {
-      loop: true,
-      mode: 'snap',
-      breakpoints: {
-        '(max-width: 767px)': {
-          slides: { origin: 'center', perView: 1.5, spacing: 5 },
-        },
-        '(min-width: 678px)': {
-          slides: { origin: 'center', perView: 2.2, spacing: 24 },
-        },
-      },
-      slideChanged(slider) {
-        setCurrentSlide(slider.track.details.rel);
-      },
-    },
-    [
-      (slider) => {
-        let timeout: ReturnType<typeof setTimeout>;
-        let mouseOver = false;
-        function clearNextTimeout() {
-          clearTimeout(timeout);
-        }
-        function nextTimeout() {
-          clearTimeout(timeout);
-          if (mouseOver) return;
-          timeout = setTimeout(() => {
-            slider.next();
-          }, 5000);
-        }
-        slider.on('created', () => {
-          slider.container.addEventListener('mouseover', () => {
-            mouseOver = true;
-            clearNextTimeout();
-          });
-          slider.container.addEventListener('mouseout', () => {
-            mouseOver = false;
-            nextTimeout();
-          });
-          nextTimeout();
-        });
-        slider.on('dragStarted', clearNextTimeout);
-        slider.on('animationEnded', nextTimeout);
-        slider.on('updated', nextTimeout);
-      },
-    ]
-  );
-
   return (
-    <section className="pb-10 md:pb-40 mb-10 md:mb-40 pt-20">
-      <div className="max-w-2xl mx-auto lg:max-w-none">
+    <section className="pb-10 md:pb-20 mb-10 pt-[126px]">
+      <div className="max-w-2xl mx-auto lg:max-w-7xl">
         <div className="md:flex md:items-center md:justify-between md:flex-col mb-20">
           <h2 className="text-52 font-light text-center font-noto -tracking-2 text-neutral">
             What are people saying?
           </h2>
         </div>
 
-        <div ref={sliderRef} className="keen-slider">
-          {testimonials.map((testimonial, i) => (
+        <div className="mt-16 space-y-8 lg:space-y-0 lg:grid lg:grid-cols-4 lg:gap-x-2">
+          {testimonials.map((testimonial) => (
             <blockquote
               key={testimonial.id}
-              className={'overflow-visible keen-slider__slide'}
+              className=" border-2 p-4 sm:flex flex justify-center items-center flex-col"
             >
-              <div
-                className={classNames(
-                  'absolute -top-[8%] -left-[2%] w-[110%] h-[120%] z-30',
-                  currentSlide !== i ? '' : ''
-                )}
-              ></div>
-              <div
-                className={classNames(
-                  ' bg-white rounded-[100px] rounded-bl-none px-10 py-6 md:p-16 text-center transition duration-500 blur-0 filter opacity-100',
-                  currentSlide !== i ? ' blur-sm opacity-25' : ''
-                )}
+              <svg
+                width={24}
+                height={18}
+                viewBox="0 0 24 18"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                className="flex-shrink-0 text-gray-700 mb-8 margin-auto"
               >
-                <Image
-                  src="/images/icons-quote.svg"
-                  width={24}
-                  height={24}
-                  alt="icons-quote"
-                  className="m-auto mb-6"
+                <path
+                  d="M0 18h8.7v-5.555c-.024-3.906 1.113-6.841 2.892-9.68L6.452 0C3.188 2.644-.026 7.86 0 12.469V18zm12.408 0h8.7v-5.555C21.083 8.539 22.22 5.604 24 2.765L18.859 0c-3.263 2.644-6.476 7.86-6.451 12.469V18z"
+                  fill="currentColor"
                 />
-                <div className="sm:flex flex justify-between flex-col flex-1 text-center">
-                  <p className=" text-dark text-xs md:text-2xl font-normal">
-                    {testimonial.quote}
-                  </p>
-                  <div className="flex justify-between flex-col">
-                    <p className="mt-8 block font-normal text-xs md:text-base text-neutral">
-                      - {testimonial.attribution} - {testimonial.role}
-                    </p>
-                  </div>
+              </svg>
+              <div className="sm:flex flex justify-between flex-col flex-1 text-center">
+                <p className=" text-gray-600 font-light text-md">
+                  {testimonial.quote}
+                </p>
+                <div className="flex justify-between flex-col">
+                  <cite className="mt-4 block font-light text-sm text-gray-900">
+                    {testimonial.attribution}
+                  </cite>
+                  <cite className="block font-light text-sm text-gray-700">
+                    {testimonial.role}
+                  </cite>
                 </div>
               </div>
             </blockquote>

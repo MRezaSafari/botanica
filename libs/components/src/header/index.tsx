@@ -333,7 +333,7 @@ const Header: FC<Props> = ({ menu }: Props) => {
                     {menu?.map((category) => (
                       <li
                         key={category.resourceId}
-                        className="text-lg font-semibold	font-raleway text-dark group relative cursor-pointer"
+                        className="text-lg font-medium	font-raleway text-dark group relative cursor-pointer"
                       >
                         {(!category.items || category.items.length === 0) && (
                           <Link

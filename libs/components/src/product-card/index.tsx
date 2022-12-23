@@ -10,10 +10,9 @@ import { IconShoppingCartPlus } from '@tabler/icons';
 
 interface Props {
   product: ProductModel;
-  badge?: string;
 }
 
-const ProductCard: FC<Props> = ({ product, badge }) => {
+const ProductCard: FC<Props> = ({ product }) => {
   const useCart = useCartStore();
 
   const handleAddToCart = (e: any) => {
@@ -26,55 +25,37 @@ const ProductCard: FC<Props> = ({ product, badge }) => {
       price: product.priceRange.maxVariantPrice.amount,
       qty: 1,
       title: product.title,
-      variantId: product.variants.nodes[0].id,
     });
   };
 
   return (
-    <div className="group relative block shadow-card hover:shadow-cardHover bg-[#ffffff] rounded-2xl transition-all duration-300 m-3 md:m-0">
+    <div className="group relative rounded-md block">
       <Link href={`/product/${product.handle}`}>
-        <a className="relative">
-          <div className="w-full overflow-hidden relative lg:h-80 xl:h-80 ">
-            <span className="absolute left-2 top-2 rounded-3xl pl-2 pr-2 font-semibold border border-dark text-xs">
-              {badge}
-            </span>
+        <a className="relative rounded-md block border border-transparent p-1 lg:group-hover:-translate-y-2 md:group-hover:-translate-y-2 lg:group-hover:border-indigo-200 md:group-hover:border-indigo-200 transition-all duration-300">
+          <div className="w-full overflow-hidden relative lg:h-72 xl:h-80 ">
             <Image
               width={278}
-              height={333}
+              height={320}
               src={product.featuredImage.url}
-              alt={
-                product.featuredImage.altText
-                  ? product.featuredImage.altText
-                  : product.featuredImage.id
-              }
-              className="w-full h-full object-center object-cover rounded-2xl rounded-b-none"
+              alt={product.featuredImage.altText}
+              className="w-full h-full object-center object-cover rounded-md rounded-b-none"
             />
           </div>
-          <div className="p-7 pt-0">
-            <h3
-              className="text-base text-[#111] font-poppins font-semibold my-6 text-center text-[20px]"
-              style={{ minHeight: 48 }}
-            >
+          <div className="pt-1">
+            <h3 className="text-sm text-gray-700" style={{ minHeight: 45 }}>
               {truncateString(product.title, 55)}
             </h3>
-
-            <p className="mt-5 mb-5 text-base font-semibold text-center text-[#111] text-[20px]">
-              ${product.priceRange.minVariantPrice.amount}
-            </p>
-
-            <h4
-              className=" text-[#666] font-poppins font-medium	 text-sm my-6 text-center"
-              style={{ minHeight: 44 }}
-            >
-              {truncateString(product.description, 55)}
-            </h4>
             <div className="flex justify-between mt-2 items-center">
+              <p className="mt-1 text-md font-medium text-gray-900">
+                ${product.priceRange.minVariantPrice.amount}
+              </p>
               <button
                 type="button"
                 onClick={handleAddToCart}
-                className=" focus:outline-none text-center rounded-3xl bg-highlight pt-3 pb-3 pr-4 pl-4 w-full text-white text-sm transition-all duration-300 hover:bg-midway"
+                className="px-2 py-2 flex gap-2 items-center font-light text-xs border border-transparent rounded-md shadow-sm text-white bg-botanical hover:bg-indigo-700 focus:outline-none"
               >
-                <span>Add to Bag</span>
+                <IconShoppingCartPlus size={16} />
+                <span className="hidden md:block lg:block">Add to cart</span>
               </button>
             </div>
           </div>
