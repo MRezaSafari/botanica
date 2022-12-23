@@ -36,7 +36,7 @@ const Testimonials: FC = () => {
     <section className="pb-10 md:pb-20 mb-10 pt-[126px]">
       <div className="max-w-2xl mx-auto lg:max-w-7xl">
         <div className="md:flex md:items-center md:justify-between md:flex-col mb-20">
-          <h2 className="text-52 font-light text-center font-noto -tracking-2 text-neutral">
+          <h2 className="text-52 font-light text-center font-poppins -tracking-2 text-neutral">
             What are people saying?
           </h2>
         </div>

@@ -7,7 +7,7 @@ const SelectedCategories = () => {
     <section aria-labelledby="category-heading">
       <div className="max-w-2xl mx-auto py-8 px-4 sm:py-10 sm:px-6 lg:max-w-7xl lg:px-8 my-16">
         <div className="md:flex md:items-center md:justify-between md:flex-col">
-          <h2 className="text-52 font-light text-center font-noto -tracking-2 text-neutral">
+          <h2 className="text-52 font-light text-center font-poppins -tracking-2 text-neutral">
             Shop by Category
           </h2>
           <Link href="/collections">

@@ -68,7 +68,7 @@ const Perks = () => {
     <section aria-labelledby="perks-heading">
       <Container>
         <div className="md:flex md:items-center md:justify-between md:flex-col">
-          <h2 className="text-52 font-light text-center font-noto -tracking-2 text-neutral">
+          <h2 className="text-52 font-light text-center font-poppins -tracking-2 text-neutral">
             Why Botanical Skin Science
           </h2>
         </div>
