@@ -40,7 +40,7 @@ const ProductList: FC<Props> = ({
 
       <div className="mt-12 grid grid-cols-1 xs:gap-y-1  md:grid-cols-4 md:gap-y-0 lg:gap-x-8">
         {products.nodes.map((product: any) => (
-          <ProductCard key={product.id} product={product} badge={badge} />
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
 

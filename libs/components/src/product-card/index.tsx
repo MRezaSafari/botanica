@@ -25,6 +25,7 @@ const ProductCard: FC<Props> = ({ product }) => {
       price: product.priceRange.maxVariantPrice.amount,
       qty: 1,
       title: product.title,
+      variantId: product.variants.nodes[0].id,
     });
   };
 
