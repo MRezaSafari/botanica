@@ -1,20 +1,13 @@
-import {
-  Breadcrumb,
-  Dropdown,
-  RadioGroup,
-  Switch,
-  TextBox,
-} from '@shopify/components';
+import { Breadcrumb, RadioGroup, Switch, TextBox } from '@shopify/components';
 import { getCollectionByHandleQuery } from '@shopify/graphql-queries';
-import { SingleCollectionModel, SingleProductModel } from '@shopify/models';
+import { SingleCollectionModel } from '@shopify/models';
 import { storefront } from '@shopify/utilities';
 import ProductCard from 'libs/components/src/product-card';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
-import Link from 'next/link';
 import React, { FC, useState } from 'react';
 import classNames from 'classnames';
-import { Accordion, Button } from 'flowbite-react';
+import { Button } from 'flowbite-react';
 import { FilterIcon } from '@heroicons/react/outline';
 import { useRouter } from 'next/router';
 import { BrowserView, MobileView } from 'react-device-detect';
@@ -181,11 +174,9 @@ const Collection: FC<Props> = ({
         <hr className="mt-10 mb-10" />
 
         <div className="md:grid md:grid-cols-12 md:gap-5">
-            <div className="col-span-3 hidden md:block lg:block">
-          <BrowserView>
-              {renderFilterBox()}
-          </BrowserView>
-            </div>
+          <div className="col-span-3 hidden md:block lg:block">
+            <BrowserView>{renderFilterBox()}</BrowserView>
+          </div>
           <MobileView>
             <div className="col-span-3 md:hidden lg:hidden mb-5">
               <div

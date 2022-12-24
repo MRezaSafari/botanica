@@ -6,13 +6,7 @@ import Link from 'next/link';
 import {
   IconKey,
   IconLogin,
-  IconLogout,
   IconMenu,
-  IconSearch,
-  IconShoppingCart,
-  IconShoppingCartPlus,
-  IconUser,
-  IconUserCircle,
   IconX,
 } from '@tabler/icons';
 

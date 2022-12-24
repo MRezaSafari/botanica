@@ -1,7 +1,6 @@
 import { FC, Fragment, useEffect, useState } from 'react';
 
 import Image from 'next/future/image';
-import Link from 'next/link';
 
 import { Dialog, Transition } from '@headlessui/react';
 import { XIcon } from '@heroicons/react/outline';

@@ -1,8 +1,5 @@
-import {
-  IconShieldChevron,
-  IconShoppingCartPlus,
-  IconTruckDelivery,
-} from '@tabler/icons';
+
+
 
 import Image from 'next/future/image';
 

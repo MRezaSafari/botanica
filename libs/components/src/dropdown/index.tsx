@@ -1,6 +1,6 @@
 import { Listbox, Transition } from '@headlessui/react';
 import { ChevronDownIcon, CheckIcon } from '@heroicons/react/outline';
-import React, { FC, Fragment, useEffect, useState } from 'react';
+import React, { FC, Fragment, useState } from 'react';
 
 interface IOption {
   key: string;

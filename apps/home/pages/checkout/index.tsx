@@ -24,9 +24,8 @@ const products = [
   },
   // More products...
 ];
-interface Props {}
 
-const Checkout: FC<Props> = () => {
+const Checkout: FC = () => {
   const cartStore = useCartStore();
   const router = useRouter();
 
@@ -395,7 +394,10 @@ const Checkout: FC<Props> = () => {
         </section>
 
         {/* Order summary */}
-        <section aria-labelledby="summary-heading" className="hidden lg:block xl:block col-span-6">
+        <section
+          aria-labelledby="summary-heading"
+          className="hidden lg:block xl:block col-span-6"
+        >
           <h2 id="summary-heading" className="sr-only">
             Order summary
           </h2>

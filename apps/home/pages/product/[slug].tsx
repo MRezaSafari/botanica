@@ -1,6 +1,5 @@
-import { FC, Fragment, useState } from 'react';
+import { FC, useState } from 'react';
 
-import { Tab } from '@headlessui/react';
 import { StarIcon } from '@heroicons/react/solid';
 import { GetServerSideProps } from 'next';
 import { storefront } from '@shopify/utilities';

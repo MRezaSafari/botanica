@@ -15,16 +15,19 @@ export const extractHandleFromUrl = (
   const policyRegex = /.*policies\/(.*)/gm;
 
   switch (type) {
-    case 'COLLECTION':
+    case 'COLLECTION': {
       const collectionSlug = collectionRegex.exec(link)?.[1];
       return `/collection/${collectionSlug}`;
+    }
 
-    case 'PAGE':
+    case 'PAGE': {
       const pageSlug = pageRegex.exec(link)?.[1];
       return `/page/${pageSlug}`;
+    }
 
-    case 'SHOP_POLICY':
+    case 'SHOP_POLICY': {
       const policySlug = policyRegex.exec(link)?.[1];
       return `/policies/${policySlug}`;
+    }
   }
 };
