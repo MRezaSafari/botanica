@@ -1,8 +1,10 @@
 import { FC, useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
 import { blogsQuery } from '@shopify/graphql-queries';
 import { BlogsResponseModel } from '@shopify/models';
 import { storefront } from '@shopify/utilities';
+import { Spinner } from '@shopify/components';
 
 type BlogType = {
   node: {
@@ -12,6 +14,7 @@ type BlogType = {
 };
 
 const Blogs: FC = () => {
+  const router = useRouter();
   const [loading, setLoading] = useState<boolean>(false);
   const [blogs, setBlogs] = useState<BlogType[]>();
 
@@ -38,17 +41,22 @@ const Blogs: FC = () => {
         Blogs
       </h2>
       <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
-        {blogs?.map((item: BlogType) => {
-          const blog = item.node;
-          return (
-            <div
-              key={blog.title}
-              className="rounded-lg shadow-lg overflow-hidden bg-white p-5 text-xl font-semibold text-gray-900"
-            >
-              <span>{blog.title}</span>
-            </div>
-          );
-        })}
+        {loading ? (
+          <Spinner />
+        ) : (
+          blogs?.map((item: BlogType) => {
+            const blog = item.node;
+            return (
+              <div
+                onClick={() => router.push(`/blogs/${blog.handle}`)}
+                key={blog.title}
+                className="rounded-lg shadow-lg overflow-hidden bg-white p-5 text-xl font-semibold text-gray-900 cursor-pointer"
+              >
+                <span>{blog.title}</span>
+              </div>
+            );
+          })
+        )}
       </div>
     </div>
   );

@@ -12,3 +12,28 @@ export interface BlogsResponseModel {
     };
   };
 }
+
+export interface BlogArticlesResponseModel {
+  data: {
+    blog: {
+      articles: {
+        edges: {
+          node: {
+            title: string;
+            id: string;
+            publishedAt: string;
+            image: {
+              url: string;
+              width: number;
+              height: number;
+              altText: string;
+            };
+            authorV2: {
+              name: string;
+            };
+          };
+        }[];
+      };
+    };
+  };
+}
