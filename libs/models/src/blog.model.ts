@@ -19,6 +19,7 @@ export interface BlogArticlesResponseModel {
       articles: {
         edges: {
           node: {
+            handle: string;
             title: string;
             id: string;
             publishedAt: string;
@@ -33,6 +34,29 @@ export interface BlogArticlesResponseModel {
             };
           };
         }[];
+      };
+    };
+  };
+}
+
+export interface ArticleResponseModel {
+  data: {
+    blog: {
+      articleByHandle: {
+        content: string;
+        handle: string;
+        title: string;
+        id: string;
+        publishedAt: string;
+        image: {
+          url: string;
+          width: number;
+          height: number;
+          altText: string;
+        };
+        authorV2: {
+          name: string;
+        };
       };
     };
   };

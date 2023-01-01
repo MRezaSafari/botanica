@@ -21,6 +21,7 @@ const getBlogArticlesByHandleQuery = (handle: string) => {
         articles(first: 100) {
           edges {
             node {
+              handle
               title
               id
               publishedAt
@@ -42,4 +43,30 @@ const getBlogArticlesByHandleQuery = (handle: string) => {
   return getBlogArticleQuery;
 };
 
-export { blogsQuery, getBlogArticlesByHandleQuery };
+const getArticleByHandleQuery = (blogHandle: string, articleHandle: string) => {
+  const getBlogArticleQuery = gql`
+    {
+      blog(handle: "${blogHandle}") {
+        articleByHandle(handle: "${articleHandle}"){
+              content
+              handle
+              title
+              id
+              publishedAt
+              image {
+                url
+                width
+                height
+                altText
+              }
+              authorV2 {
+                name
+              }
+        }
+      }
+    }
+  `;
+  return getBlogArticleQuery;
+};
+
+export { blogsQuery, getBlogArticlesByHandleQuery, getArticleByHandleQuery };
