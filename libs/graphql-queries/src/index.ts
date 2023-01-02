@@ -7,4 +7,5 @@ export * from './user.query';
 export * from './address.query';
 export * from './order.query';
 export * from './cart.query';
-export * from './pages.query'
+export * from './pages.query';
+export * from './blog.query';
